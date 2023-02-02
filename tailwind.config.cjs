@@ -10,7 +10,8 @@ module.exports = {
         primary: {
           800: '#4D5B9E',
           900: '#293264'
-        }
+        },
+        light: '#F5F7FB'
       },
       fontFamily: {
         karla: ['Karla', 'sans-serif']
