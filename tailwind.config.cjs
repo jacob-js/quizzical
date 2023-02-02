@@ -14,6 +14,9 @@ module.exports = {
       },
       fontFamily: {
         karla: ['Karla', 'sans-serif']
+      },
+      spacing: {
+        15: '3.75rem'
       }
     },
   },
