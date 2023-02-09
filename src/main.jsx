@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './components/pages/Home'
+import Quiz from './components/pages/Quiz'
 import theme from './config/chakraTheme'
 import './index.css'
 
@@ -11,10 +12,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: '/quiz',
+    element: <Quiz />
   }
-  // {
-  //   path: '/quiz'
-  // }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
