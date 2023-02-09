@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../../ui/Button'
 import QuizItem from './QuizItem'
 
 function Quiz() {
@@ -63,10 +64,11 @@ function Quiz() {
           }
     ]
   return (
-    <div>
+    <div className='flex flex-col gap-5 pb-20'>
         {
             items.map((item, index) => <QuizItem {...item} key={index} />)
         }
+        <Button>Check answers</Button>
     </div>
   )
 }
