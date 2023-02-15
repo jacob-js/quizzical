@@ -33,12 +33,12 @@ function Quiz() {
   return (
     <div className='flex flex-col gap-5 pb-20'>
         {
-            loading ? <Spinner /> :
+            loading && !submitted ? <Spinner /> :
             questions.map((item, index) => <QuizItem item={item} key={index} onChoose={onChoose} submitted={submitted} />)
         }
         {
           submitted ?
-          <div className="flex flex-col lg:flex-row items-center gap-x-5">
+          <div className="flex flex-col lg:flex-row items-center gap-5">
             <div className="text-primary-900 font-bold lg:text-lg">You scored {questions.filter(q => q.succeed).length}/{questions.length}</div>
             <Button onClick={handleReplay} isLoading={loading}>Play Again</Button>
           </div>:
