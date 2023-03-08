@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import OptionTag from '../../../ui/OptionTag'
 
 function QuizItem({item, onChoose, submitted}) {
     const {question, incorrect_answers, correct_answer, succeed} = item;
     const [selected, setSelected] = useState('');
+
+    const handleOptionClick = (answer) => {
+        setSelected(answer);
+        onChoose(item, answer);
+    }
 
   return (
     <div className='py-4 border-b border-light-blue'>
@@ -13,7 +18,7 @@ function QuizItem({item, onChoose, submitted}) {
         <div className="flex mt-5 flex-wrap gap-3">
             {
                 [...incorrect_answers, correct_answer].map((answer, index) =>(
-                    <OptionTag key={index} onClick={() =>{setSelected(answer); onChoose(item, answer)}} selected={answer === selected} isValid={(succeed && selected == answer) || (answer === correct_answer && submitted)} isInvalid={succeed === false} submitted={submitted}>{answer}</OptionTag>
+                    <OptionTag key={index} onClick={() =>handleOptionClick(answer)} selected={answer === selected} isValid={(succeed && selected == answer) || (answer === correct_answer && submitted)} isInvalid={succeed === false} submitted={submitted}>{answer}</OptionTag>
                 ))
             }
         </div>

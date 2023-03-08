@@ -1,6 +1,6 @@
 import { Spinner } from '@chakra-ui/spinner';
 import useAxios from 'axios-hooks';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Button from '../../ui/Button'
 import QuizItem from './QuizItem'
 

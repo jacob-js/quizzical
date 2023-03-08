@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Layout({children}) {
   return (
     <div className='bg-light min-h-screen w-full inset-0 fixed font-karla overflow-auto'>
